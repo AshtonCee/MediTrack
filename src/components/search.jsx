@@ -14,6 +14,7 @@ function GameSearch() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        // Replace white space with correct characters for the generated URL
         const searchGameWithHyphens = searchGame.replace(/\s/g, "-");
         const searchGameWithUnderscores = searchGame.replace(/\s/g, "_");
         let generatedUrl;
@@ -39,7 +40,7 @@ function GameSearch() {
                 <button type="submit">Search</button>
             </form>
             {url && (
-                <PopulateAchievements
+                <PopulateAchievements // Make URL usable in other components
                     url={url}
                 />
             )}
